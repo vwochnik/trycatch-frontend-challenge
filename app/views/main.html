@@ -1,4 +1,29 @@
 <h1>Garage Map</h1>
-<p ng-repeat="row in data">
-  {{ row }}
-</p>
+<table class="data-table" ng-init="sortKey='id'">
+  <thead>
+    <tr>
+      <th><sorting ng-model="sortKey" sort-by="'id'">Id</sorting></th>
+      <th><sorting ng-model="sortKey" sort-by="'company'">Company Name</sorting></th>
+      <th><sorting ng-model="sortKey" sort-by="'founder'">Founder</sorting></th>
+      <th><sorting ng-model="sortKey" sort-by="'city'">City</sorting></th>
+      <th><sorting ng-model="sortKey" sort-by="'country'">Country</sorting></th>
+      <th><sorting ng-model="sortKey" sort-by="'postal'">Postal Code</sorting></th>
+      <th><sorting ng-model="sortKey" sort-by="'street'">Street</sorting></th>
+      <th>Photo</th>
+      <th>Home Page</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="row in data | orderBy: sortKey">
+      <td>{{ row.id }}</td>
+      <td>{{ row.company }}</td>
+      <td>{{ row.founder}}</td>
+      <td>{{ row.city }}</td>
+      <td>{{ row.country }}</td>
+      <td>{{ row.postal }}</td>
+      <td>{{ row.street }}</td>
+      <td><img class="thumb" src="{{ row.photo }}" alt="Company Photo"></td>
+      <td><a href="{{ row.homepage }}" title="{{ row.homepage | stripProtocol }}">{{ row.homepage | stripProtocol }}</a></td>
+    </tr>
+  </tbody>
+</table>

@@ -2,6 +2,7 @@
 // endbower
 
 $body-bg: #f8f8ff;
+$table-bg: #848488;
 $text-color: #282830;
 $font-family: 'Open Sans', sans-serif;
 
@@ -55,5 +56,44 @@ body {
   span {
     display: inline-block;
     width: 10em;
+  }
+}
+
+.data-table {
+  border: 0;
+  border-collapse: collapse;
+  
+  thead {
+    th {
+      text-align: left;
+      background-color: rgba($table-bg, 0.3);
+
+      .sorting {
+        &:after {
+          content: '\25b2';
+          font-size: 0.6em;
+          opacity: 0;
+        }
+        &.active::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr:nth-child(odd) {
+      background-color: rgba($table-bg, 0.1);
+    }
+    tr:nth-child(even) {
+      background-color: rgba($table-bg, 0.2);
+    }
+
+    .thumb {
+      width: auto;
+      height: auto;
+      max-width: 64px;
+      max-height: 64px;
+    }
   }
 }
