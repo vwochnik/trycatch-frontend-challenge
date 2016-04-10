@@ -10,3 +10,50 @@ body {
   color: $text-color;
   font-family: $font-family;
 }
+
+.instruction-list {
+	counter-reset: li;
+	list-style: none;
+  padding: 0;
+  margin-left: 0;
+
+  > li {
+    margin-left: 2.2em;
+
+    &:not(:last-child) {
+      margin-bottom: 2em;
+    }
+
+    > p {
+    	position: relative;
+    	display: block;
+
+      &:before {
+      	content: counter(li);
+      	counter-increment: li;
+      	position: absolute;
+      	left: -1.1em;
+      	top: -0.1em;
+      	font-size: 2em;
+      	font-weight: bold;
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+.csv-import {
+  textarea {
+    display: block;
+    resize: vertical;
+    width: 60%;
+    margin-bottom: 0.8em;
+  }
+}
+
+.csv-column-mapping {
+  span {
+    display: inline-block;
+    width: 10em;
+  }
+}

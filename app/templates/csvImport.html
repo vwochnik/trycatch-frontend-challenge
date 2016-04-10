@@ -1,0 +1,7 @@
+<div class="csv-import">
+  <textarea ng-model="csvData" ng-change="csvDataChanged()" rows="24"></textarea>
+  <label for="delimiter">Delimiter:</label>
+  <select name="delimiter" ng-model="csvDelim" ng-init="csvDelim=csvDelims[0][0]" ng-change="csvDelimChanged()" ng-options="d[0] as d[1] for d in csvDelims"></select>
+  <input name="customHeader" type="checkbox" ng-model="csvHeader" ng-change="csvHeaderChanged()">
+  <label for="customHeader">Custom header</label>
+</div>

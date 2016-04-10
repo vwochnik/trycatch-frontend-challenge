@@ -1,2 +1,21 @@
 <h1>Import Data</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda dolorem tempore, iste officia nobis accusamus velit consectetur fugit veniam, deserunt mollitia molestias eum nisi obcaecati hic earum ea magnam?</p>
+<p>Please follow these three steps to import data into the application:</p>
+<ol class="instruction-list">
+  <li>
+    <p>Paste CSV data into the textarea below. Then select the proper delimiter and check whether the pasted CSV contains a header with column names.</p>
+    <csv-import ng-model="parsedData" ng-change="parsedDataChanged()"></csv-import>
+  </li>
+  <li ng-show="headerColumns.length>0">
+    <p>Select which columns of the CSV data to use for which attributes.</p>
+    <div class="csv-column-mapping" ng-repeat="mapping in columnMapping">
+      <span>{{ mapping[1] }}:</span>
+      <select ng-model="mapping[2]", ng-options="h for h in headerColumns">
+        <option value="">--</option>
+      </select>
+    </div>
+  </li>
+  <li ng-show="canImport()">
+    <p>Press import to import the data into the application. Already imported data is lost in the process.</p>
+    <button ng-click="importData()">Import</button>
+  </li>
+</ol>

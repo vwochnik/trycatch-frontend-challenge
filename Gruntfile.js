@@ -328,7 +328,7 @@ module.exports = function (grunt) {
           usemin: 'scripts/scripts.js'
         },
         cwd: '<%= appConfig.app %>',
-        src: 'views/{,*/}*.html',
+        src: '{views,templates}/{,*/}*.html',
         dest: '.tmp/templateCache.js'
       }
     },

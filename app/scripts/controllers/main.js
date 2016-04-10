@@ -9,7 +9,8 @@
    * Controller of the main view
    */
   ng.module('garageMapApp')
-    .controller('MainCtrl', function() {
-    });
+    .controller('MainCtrl', ['$scope', 'DataService', function($scope, DataService) {
+      $scope.data = DataService.get();
+    }]);
 
 })(angular);
