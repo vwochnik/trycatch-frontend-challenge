@@ -1,0 +1,21 @@
+<ng-map zoom="10" center="{{center.latitude}},{{center.longitude}}" default-style="true">
+  <info-window id="info-window">
+    <div class="info-window" ng-non-bindable>
+      <img class="thumb" src="{{ selectedCompany.photo }}" alt="Company Photo">
+        <div class="profile">
+        <p><strong>{{ selectedCompany.company }}</strong>
+        <br>founded by {{ selectedCompany.founder }}</p>
+        <p>{{ selectedCompany.street }}
+        <br>{{ selectedCompany.postal }} {{ selectedCompany.city }}
+        <br>{{ selectedCompany.country }}</p>
+        <p>Homepage: <a href="{{ selectedCompany.homepage }}" title="{{ selectedCompany.homepage | stripProtocol }}">{{ selectedCompany.homepage | stripProtocol }}</a></p>
+      </div>
+    </div>
+  </info-window>
+
+  <marker ng-repeat="company in companies track by $index"
+          position="{{company.latitude}},{{company.longitude}}"
+          id="marker-{{$index}}"
+          title="{{company.company}}"
+          on-click="showInfo(company)"></marker>
+</ng-map>

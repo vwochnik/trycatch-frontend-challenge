@@ -62,7 +62,7 @@ body {
 .data-table {
   border: 0;
   border-collapse: collapse;
-  
+
   thead {
     th {
       text-align: left;
@@ -95,5 +95,20 @@ body {
       max-width: 64px;
       max-height: 64px;
     }
+  }
+}
+
+.info-window {
+  .thumb {
+    display: block;
+    float: left;
+    width: auto;
+    height: auto;
+    max-width: 64px;
+    max-height: 64px;
+  }
+
+  .profile {
+    margin-left: 72px;
   }
 }
