@@ -12,6 +12,7 @@
   ng
     .module('garageMapApp', [
       'ngRoute',
+      'ngMap',
       'ngStorage'
     ])
     .config(['$routeProvider', function($routeProvider) {

@@ -4,7 +4,8 @@
   "dependencies": {
     "angular": "^1.4.0",
     "angular-route": "^1.4.0",
-    "ngstorage": "^0.3.10"
+    "ngstorage": "^0.3.10",
+    "ngmap": "^1.17.3"
   },
   "devDependencies": {},
   "appPath": "app",
