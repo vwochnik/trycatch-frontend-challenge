@@ -49,7 +49,7 @@
 
   /**
    * @ngdoc function
-   * @name garageMapApp.controller:AboutCtrl
+   * @name garageMapApp.directive:csvImport
    * @description
    * # AboutCtrl
    * Controller of the about view
