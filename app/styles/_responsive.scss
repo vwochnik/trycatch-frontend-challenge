@@ -1,0 +1,17 @@
+@media (min-width: 768px) {
+  .site-header, .site-content, .site-footer {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  .site-header, .site-content, .site-footer {
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-header, .site-content, .site-footer {
+    max-width: 60%;
+  }
+}

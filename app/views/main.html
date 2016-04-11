@@ -1,3 +1,13 @@
 <h1>Garage Map</h1>
-<company-table companies="data"></company-table>
-<company-map companies="data"></company-map>
+<ul class="button-list">
+<li><button class="button icon-button" ng-disabled="view=='tabular'" ng-click="view='tabular'"><i class="fa fa-table"></i></button></li>
+<li><button class="button icon-button" ng-disabled="view=='map'" ng-click="view='map'"><i class="fa fa-map-marker"></i></button></li>
+</ul>
+<div ng-switch="view" ng-init="view='map'">
+  <div ng-switch-when="tabular">
+    <company-table companies="data"></company-table>
+  </div>
+  <div ng-switch-when="map">
+    <company-map companies="data"></company-map>
+  </div>
+</div>

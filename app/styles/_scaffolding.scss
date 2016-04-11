@@ -1,0 +1,179 @@
+@import "compass/utilities/general/clearfix";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &::before {
+    content: '\276f';
+    font-size: 0.8em;
+    margin-right: 0.15em;
+  }
+}
+
+.site-header, .site-content, .site-footer {
+  margin: 0 auto;
+  padding: 0 1.2em;
+
+  &:not(:first-child) {
+    margin-top: 2em;
+  }
+}
+
+.site-header {
+  @include clearfix();
+  margin-top: 0.2em;
+  margin-bottom: 0.25em;
+
+  .site-brand, .site-navigation {
+    margin: 0;
+  }
+
+  .site-brand {
+    float: left;
+  }
+
+  .site-navigation {
+    float: right;
+    list-style: none;
+    padding: 0;
+
+    > li {
+      display: inline-block;
+      margin: 0 0.2em;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.site-footer {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.button-list {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+
+  > li {
+    display: inline-block;
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-right: 0.8em;
+    }
+  }
+}
+
+.button {
+  border: none;
+  padding: 0.3em 0.5em;
+
+  &.icon-button {
+    width: 2.5em;
+  }
+}
+
+.instruction-list {
+	counter-reset: li;
+	list-style: none;
+  padding: 0;
+  margin-left: 0;
+
+  > li {
+    margin-left: 2.2em;
+
+    &:not(:last-child) {
+      margin-bottom: 2em;
+    }
+
+    > p {
+    	position: relative;
+    	display: block;
+
+      &:before {
+      	content: counter(li);
+      	counter-increment: li;
+      	position: absolute;
+      	left: -1.1em;
+      	top: -0.1em;
+      	font-size: 2em;
+      }
+    }
+  }
+}
+
+.csv-import {
+  textarea {
+    display: block;
+    resize: vertical;
+    width: 80%;
+    margin-bottom: 0.8em;
+  }
+}
+
+.csv-column-mapping {
+  span {
+    display: inline-block;
+    width: 10em;
+  }
+}
+
+.data-table {
+  border: 0;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 0.1em 0.3em;
+  }
+
+  thead {
+    th {
+      text-align: left;
+      vertical-align: bottom;
+
+      .sorting {
+        &:after {
+          content: '\25b2';
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+
+  tbody {
+    td {
+      vertical-align: top;
+    }
+
+    .thumb {
+      width: auto;
+      height: auto;
+      max-width: 64px;
+      max-height: 64px;
+    }
+  }
+}
+
+.info-window {
+  .thumb {
+    display: block;
+    float: left;
+    width: auto;
+    height: auto;
+    max-width: 64px;
+    max-height: 64px;
+  }
+
+  .profile {
+    margin-left: 72px;
+  }
+}
